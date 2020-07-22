@@ -1,0 +1,44 @@
+print('These are the coordinates of the squares in the board. Each number represents a square that can be filled by either an "X" or an "O"')
+boardlist = [1,2,3,4,5,6,7,8,9]
+print('_ _ _ _ _ _')
+print('_1_|_2_|_3_')
+print('_4_|_5_|_6_')
+print('_7_|_8_|_9_\n\n\n')
+while True:
+  position = str()
+  print('You are X. Play your move. Enter the number of the position where you want to play.')
+  print('_ _ _ _ _ _')
+  print(f"_{boardlist[0]}_|_{boardlist[1]}_|_{boardlist[2]}_")
+  print(f"_{boardlist[3]}_|_{boardlist[4]}_|_{boardlist[5]}_")
+  print(f"_{boardlist[6]}_|_{boardlist[7]}_|_{boardlist[8]}_")
+  while (type(position) != int) or ((position in boardlist) == False):
+    try:
+      position = int(input('\n>> '))
+    except:
+      print('\nPlease enter a number and not a letter, word or sentence')
+  boardlist[(position - 1)] = 'X'
+  if ((boardlist[0] == 'X') and (boardlist[1] == 'X') and (boardlist[2] == 'X')) or ((boardlist[3] == 'X') and (boardlist[4] == 'X') and (boardlist[5] == 'X')) or ((boardlist[6] == 'X') and (boardlist[7] == 'X') and (boardlist[8] == 'X')) or ((boardlist[0] == 'X') and (boardlist[3] == 'X') and (boardlist[6] == 'X')) or ((boardlist[1] == 'X') and (boardlist[4] == 'X') and (boardlist[7] == 'X')) or ((boardlist[2] == 'X') and (boardlist[5] == 'X') and (boardlist[8] == 'X')) or ((boardlist[0] == 'X') and (boardlist[4] == 'X') and (boardlist[8] == 'X')) or ((boardlist[2] == 'X') and (boardlist[4] == 'X') and (boardlist[6] == 'X')):
+    print(f"_{boardlist[0]}_|_{boardlist[1]}_|_{boardlist[2]}_")
+    print(f"_{boardlist[3]}_|_{boardlist[4]}_|_{boardlist[5]}_")
+    print(f"_{boardlist[6]}_|_{boardlist[7]}_|_{boardlist[8]}_")
+    print('\n\nX WINS !')
+    break
+  elif (1 not in boardlist) and (2 not in boardlist) and (3 not in boardlist) and (4 not in boardlist) and (5 not in boardlist) and (6 not in boardlist) and (7 not in boardlist) and (8 not in boardlist) and (9 not in boardlist):
+    print('\n\nDRAW')
+    break
+  position = str()
+  print('\nYou are O. Play your move. Enter the number of the position where you want to play.')
+  print('_ _ _ _ _ _')
+  print(f"_{boardlist[0]}_|_{boardlist[1]}_|_{boardlist[2]}_")
+  print(f"_{boardlist[3]}_|_{boardlist[4]}_|_{boardlist[5]}_")
+  print(f"_{boardlist[6]}_|_{boardlist[7]}_|_{boardlist[8]}_")
+  while (type(position) != int) or ((position in boardlist) == False):
+    try:
+      position = int(input('\n>> '))
+    except:
+      print('\nPlease enter a number and not a letter, word or sentence')
+  boardlist[(position - 1)] = 'O'
+  if ((boardlist[0] == 'O') and (boardlist[1] == 'O') and (boardlist[2] == 'O')) or ((boardlist[3] == 'O') and (boardlist[4] == 'O') and (boardlist[5] == 'O')) or ((boardlist[6] == 'O') and (boardlist[7] == 'O') and (boardlist[8] == 'O')) or ((boardlist[0] == 'O') and (boardlist[3] == 'O') and (boardlist[6] == 'O')) or ((boardlist[1] == 'O') and (boardlist[4] == 'O') and (boardlist[7] == 'O')) or ((boardlist[2] == 'O') and (boardlist[5] == 'O') and (boardlist[8] == 'O')) or ((boardlist[0] == 'O') and (boardlist[4] == 'O') and (boardlist[8] == 'O')) or ((boardlist[2] == 'O') and (boardlist[4] == 'O') and (boardlist[6] == 'O')):
+    print('\n\nO WINS !')
+    break
+print("\n\nIf you want to play again, click the 'Run Again' button below")
